@@ -49,7 +49,7 @@ app.post('/api/diseases/', async (request, response) => {
 
 
 
-const PORT = 5000 || process.env.PORT
+const PORT = 5000 || process.env.PORT;
 
 const listener = app.listen(PORT, () => {
     console.log(`api running ${PORT}`);
