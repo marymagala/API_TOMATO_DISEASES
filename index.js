@@ -29,7 +29,7 @@ app.get('/', async (request, response) => {
 
 app.post('/api/diseases/', async (request, response) => {
     const { disease_name } = request.body;
-     await db.all(`SELECT * FROM diseases WHERE disease_name = ?`, disease_name)
+    await db.all(`SELECT * FROM diseases WHERE disease_name = ?`, disease_name)
         .then(queryResults => {
             if (queryResults.length == 1) {
                 response.json({
