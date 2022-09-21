@@ -30,13 +30,11 @@ app.get('/', async (request, response) => {
 app.post('/api/diseases/', async (request, response) => {
     const { disease_name } = request.body;
     await db.all(`SELECT * FROM diseases WHERE disease_name = ?`, disease_name)
-<<<<<<< HEAD
-       .then(queryResults => {
-           if (queryResults.length == 1) {
-=======
+ 
+      
         .then(queryResults => {
             if (queryResults.length == 1) {
->>>>>>> 9fba773f2c4803af298f162e375a1b5d52b19e85
+
                 response.json({
                     status: 'success',
                     isFound: true,
@@ -80,13 +78,8 @@ app.post('/api/diseases/', async (request, response) => {
 
 
 
-<<<<<<< HEAD
+
 const PORT = process.env.PORT || 5000
-=======
-const PORT = 5000 || process.env.PORT;
->>>>>>> 9fba773f2c4803af298f162e375a1b5d52b19e85
-
-
 app.listen(PORT, () => {
     console.log(`api running ${PORT}`);
 })
