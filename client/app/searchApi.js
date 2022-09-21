@@ -6,6 +6,7 @@ document.addEventListener('alpine:init', () => {
         results: {},
         treatment: {},
         symptoms: {},
+        
 
         search() {
             axios.post(`http://localhost:5000/api/diseases/`, {
@@ -16,6 +17,7 @@ document.addEventListener('alpine:init', () => {
                     this.message = 'Results found'
                     this.results = response.data.search_results[0];
                     this.open = true;
+                    console.log(response.data.search_results)
                 } else {
                     this.message = response.data.status
                 }

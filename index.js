@@ -29,28 +29,55 @@ app.get('/', async (request, response) => {
 
 app.post('/api/diseases/', async (request, response) => {
     const { disease_name } = request.body;
-     await db.all(`SELECT * FROM diseases WHERE disease_name = ?`, disease_name)
-        .then(queryResults => {
-            if (queryResults.length == 1) {
+    await db.all(`SELECT * FROM diseases WHERE disease_name = ?`, disease_name)
+       .then(queryResults => {
+           if (queryResults.length == 1) {
                 response.json({
                     status: 'success',
                     isFound: true,
                     search_results: queryResults
                 })
+
+
+
             } else {
-                response.json({
+              response.json({
                     status: "Disease Not Found",
                     isFound: false,
                 })
-            }
+             }
 
-        })
-})
+         })
+ })
+
+// app.post('/api/diseases/', async (request, response) => {
+//     const { disease_name } = request.body;
+//      await db.all(`SELECT diseases.disease_name, management.management_type, management.id from diseases JOIN management on diseases.id= management.disease_id WHERE diseases.disease_name = ?`, disease_name )
+//         .then(queryResults => {
+//             if (queryResults.length > 0) {
+//                 response.json({
+//                     status: 'success',
+//                     isFound: true,
+//                     search_results: queryResults
+//                 })
+
+         
+                
+//             } else {
+//                 response.json({
+//                     status: "Disease Not Found",
+//                     isFound: false,
+//                 })
+//             }
+
+//         })
+// })
 
 
 
-const PORT = 5000 || process.env.PORT
+const PORT = process.env.PORT || 5000
 
-const listener = app.listen(PORT, () => {
+
+app.listen(PORT, () => {
     console.log(`api running ${PORT}`);
 })
