@@ -23,19 +23,27 @@ console.log('db initialized')
 
 app.get('/', async (request, response) => {
     response.json({
-        status: "api running"
+        status: "api running",
+
     });
+    console.log('status')
 });
 
 app.post('/api/diseases/', async (request, response) => {
     const { disease_name } = request.body;
-    await db.all(`SELECT * FROM diseases WHERE disease_name = ?`, disease_name)
- 
-      
+    await db.all(`SELECT * FROM diseases WHERE lower(disease_name) = ? `, disease_name.toLowerCase())
+
+
         .then(queryResults => {
             if (queryResults.length == 1) {
+                // setTimeout(() =>{
+
+
+                //  })
+
 
                 response.json({
+
                     status: 'success',
                     isFound: true,
                     search_results: queryResults
@@ -44,14 +52,41 @@ app.post('/api/diseases/', async (request, response) => {
 
 
             } else {
-              response.json({
+                response.json({
                     status: "Disease Not Found",
                     isFound: false,
                 })
-             }
+            }
 
-         })
- })
+        })
+})
+
+
+// app.post(`/api/diseases/update`, async (request, response) => {
+
+//     // console.log(request,body)
+
+//     const { disease_name, description, symptoms_and_signs, treatment, id } = request.body;
+
+//     const results = await db.run(`update diseases set disease_name = ?, description = ?, symptoms_and_signs = ?, treatment = ? where id = ?`,
+
+//         disease_name,
+//         description,
+//         symptoms_and_signs,
+//         treatment,
+//         id
+//     )
+
+
+
+//     //console.log(results)
+
+//     response.json({
+//         status: 'success'
+//     })
+
+
+// })
 
 // app.post('/api/diseases/', async (request, response) => {
 //     const { disease_name } = request.body;
@@ -64,8 +99,8 @@ app.post('/api/diseases/', async (request, response) => {
 //                     search_results: queryResults
 //                 })
 
-         
-                
+
+
 //             } else {
 //                 response.json({
 //                     status: "Disease Not Found",

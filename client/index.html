@@ -12,7 +12,8 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
+<body class="bg-yellow-500">
+
     <!-- component -->
     <div x-data="disease" style="max-width:700px; margin: 100px auto;">
 
@@ -51,16 +52,32 @@
 
 
         </div>
-        <h1 x-text= "message"></h1> 
+        <h1 x-text="message"></h1>
+
+        <div x-show="hideList">
+            <strong>List of available tomato diseases</strong>
+            <h3>Bacterial spot disease</h3>
+            <h3>Late blight</h3>
+            <h3>Early blight</h3>
+            <h3>Mosaic virus</h3>
+            <h3>Yellow leaf curl</h3>
+
+        </div>
+
+
+
+
         <div x-show="open" class="searchResults">
-        
+
             <!-- <p x-text="message"></p> -->
+
 
             <strong>
                 <a href="./disease-info.html">
                     <h3 x-text="results.disease_name"></h3>
                 </a>
             </strong>
+
             <strong>Description</strong>
             <li x-text="results.description"></li>
             <strong>Symptoms And Signs</strong>
