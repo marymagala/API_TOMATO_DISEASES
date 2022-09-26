@@ -3,10 +3,11 @@ content-type: application/json
 
 {
     "disease_name": "yellow leaf curl",
-    "description": "This is one of more than a dozen plant viruses that can infect tomatoes in both the home garden and commercial production. The virus is physically spread plant-to-plant by the silverleaf whitefly. These insects can acquire this virus in 15-30 minutes during a feeding period on an infected plant.",
+     "description": "This is one of more than a dozen plant viruses that can infect tomatoes in both the home garden and commercial production. The virus is physically spread plant-to-plant by the silverleaf whitefly. These insects can acquire this virus in 15-30 minutes during a feeding period on an infected plant.",
     "symptoms_and_signs": "Typical symptoms for this disease in tomato are yellow (chlorotic) leaf edges, upward leaf cupping, leaf mottling, reduced leaf size, and flower drop. TYLCV can have a severe impact on tomato production. Plants infected at an early stage won't bear fruit and their growth will be severely stunted.TYLCV identification based only on symptomatology is unreliable, because similar symptoms can be caused by other viruses or various growing conditions.",
     "treatment": "Spraying fungicides is the most effective way to prevent late blight. For conventional gardeners and commercial producers, protectant fungicides such as chlorothalonil (e.g., Bravo, Echo, Equus, or Daconil) and Mancozeb (Manzate) can be used.
     Continue weekly spray applications to protect plants from further infection. Severely infected plants can be rogued and either buried or burned. Avoid composting diseased plants.
-    Rotate tomatoes with vegetables unrelated botanically to tomatoes or potatoes. Do not plant these sites with these groups of vegetables for two to three years. Avoid harvesting tomato fruits with visible disease lesions.",
+     Rotate tomatoes with vegetables unrelated botanically to tomatoes or potatoes. Do not plant these sites with these groups of vegetables for two to three years. Avoid harvesting tomato fruits with visible disease lesions.",
     "id": 4
 }
+

@@ -9,11 +9,11 @@ document.addEventListener('alpine:init', () => {
         hideList: true,
        
         
-        clearSearch(){
-         setTimeout(()=>{
-              this.open = false
-         },6000)
-        },
+        // clearSearch(){
+        //  setTimeout(()=>{
+        //       this.open = false
+        //  },6000)
+        // },
 
         search() {
             axios.post(`/api/diseases/`, {

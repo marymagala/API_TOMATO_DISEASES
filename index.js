@@ -62,31 +62,51 @@ app.post('/api/diseases/', async (request, response) => {
 })
 
 
-// app.post(`/api/diseases/update`, async (request, response) => {
+app.post(`/api/diseases/update`, async (request, response) => {
 
-//     // console.log(request,body)
+    //console.log(request, body)
 
-//     const { disease_name, description, symptoms_and_signs, treatment, id } = request.body;
+    const {disease_name, description, symptoms_and_signs, treatment, id } = request.body;
 
-//     const results = await db.run(`update diseases set disease_name = ?, description = ?, symptoms_and_signs = ?, treatment = ? where id = ?`,
+    const results = await db.run(`update diseases set disease_name = ?, description = ?, symptoms_and_signs = ?, treatment = ? where id = ?`,
 
-//         disease_name,
-//         description,
-//         symptoms_and_signs,
-//         treatment,
-//         id
-//     )
+        disease_name,
+        description,
+        symptoms_and_signs,
+        treatment,
+        id
+    )
 
+     //console.log(results)
 
+    response.json({
+        status: 'success'
+    })
 
-//     //console.log(results)
+})
 
-//     response.json({
-//         status: 'success'
-//     })
+app.post(`/api/health_status/update`, async(request, response) =>{
 
-
-// })
+    // console.log(request,body)
+ 
+ const {diagnosis, picture_name, id} = request.body;
+ 
+ const results = await db.run(`update health_status set diagnosis = ?, picture_name = ?  where id = ?`,
+ diagnosis, 
+ picture_name,
+ id
+ 
+ )
+ 
+ 
+ //console.log(results)
+ 
+ response.json({
+     status: 'success'
+ })
+ 
+ 
+ })
 
 // app.post('/api/diseases/', async (request, response) => {
 //     const { disease_name } = request.body;
